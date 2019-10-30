@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapsActivity" >
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        map:layout_constraintTop_toTopOf="parent"
+        tools:context=".MapsActivity"
+        tools:layout_editor_absoluteX="-127dp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/actTitle"
+        android:layout_width="300dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:hint="Nhập tên vị trí"
+        android:inputType="textPersonName"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.0"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtLatitude"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter Lat"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        map:layout_constraintVertical_bias="0.086" />
+
+    <EditText
+        android:id="@+id/edtLongitude"
+        android:layout_width="186dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter Lng"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.285"
+        map:layout_constraintStart_toEndOf="@+id/edtLatitude"
+        map:layout_constraintTop_toTopOf="parent"
+        map:layout_constraintVertical_bias="0.086" />
+
+
+    <Button
+        android:onClick="AddMaps"
+        android:id="@+id/btnAdd"
+        style="@android:style/Widget.DeviceDefault.Button.Inset"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="48dp"
+        android:background="#B0D6CDCD"
+        android:text="add"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toBottomOf="@+id/edtLatitude" />
+
+    <Button
+        android:id="@+id/btnEdit"
+        style="@android:style/Widget.Material.Button.Inset"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="48dp"
+        android:background="#B0D6CDCD"
+        android:onClick="EditMaps"
+        android:text="edit"
+        map:layout_constraintEnd_toStartOf="@+id/btnDelete"
+        map:layout_constraintHorizontal_bias="0.55"
+        map:layout_constraintStart_toEndOf="@+id/btnAdd"
+        map:layout_constraintTop_toBottomOf="@+id/edtLongitude"
+        tools:ignore="NewApi" />
+
+    <ImageView
+        android:id="@+id/imgSearch"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_search"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.304"
+        map:layout_constraintStart_toEndOf="@+id/actTitle"
+        map:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        style="@android:style/Widget.Material.Button.Inset"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="52dp"
+        android:background="#B0D6CDCD"
+        android:onClick="DeleteMaps"
+        android:text="delete"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.606"
+        map:layout_constraintStart_toStartOf="@+id/map"
+        map:layout_constraintTop_toBottomOf="@+id/edtLongitude"
+        tools:ignore="NewApi" />
+
+    <Button
+        android:onClick="Cancel"
+        android:id="@+id/btnCancel"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginStart="299dp"
+        android:layout_marginLeft="299dp"
+        android:layout_marginTop="84dp"
+        android:text="Cancel"
+        map:layout_constraintBottom_toBottomOf="@+id/btnDelete"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.166"
+        map:layout_constraintStart_toStartOf="@+id/map"
+        map:layout_constraintTop_toBottomOf="@+id/imgSearch" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="248dp"
+        android:onClick="ZoomIn"
+        android:src="@drawable/ic_zoom_in"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.914"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toBottomOf="@+id/btnDelete" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="41dp"
+        android:layout_height="45dp"
+        android:onClick="openList"
+        android:src="@drawable/ic_list"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.891"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:onClick="ZoomOut"
+        android:src="@drawable/ic_zoom_out"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.914"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toBottomOf="@+id/imageView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
